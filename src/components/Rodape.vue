@@ -14,7 +14,7 @@ export default defineComponent({
     </div>
 </template>
 
-<style>
+<style scoped>
 .rodapePrincipal .container {
     width: 100%;
 }

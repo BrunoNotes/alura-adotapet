@@ -23,21 +23,27 @@ import Rodape from "./components/Rodape.vue"
 </template>
 
 <style scoped>
-#app {
-    margin: 0;
-    padding: 0;
-}
-
 .corpo {
     background-image: url('./assets/img/Forma_top.svg');
     background-repeat: no-repeat;
-    background-size: 96%;
-    /* background-color: #3772FF; */
+    background-size: 40%;
     min-height: 100vh;
 }
 
 footer {
     position: sticky;
     top: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .corpo {
+        background-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .corpo {
+        background-size: 96%;
+    }
 }
 </style>

@@ -1,8 +1,11 @@
 <script lang="ts">
+import Botao from "../components/Botao.vue"
+
 export default {
     created() {
-        document.body.style.backgroundColor = '#3772FF'
+        document.body.style.backgroundColor = "#3772FF";
     },
+    components: { Botao }
 }
 </script>
 
@@ -20,10 +23,12 @@ export default {
             </p>
 
             <div class="conteudoPrincipal-botoes">
-                <button class="conteudoPrincipal-botao">Já tenho conta</button>
-            </div>
-            <div class="conteudoPrincipal-botoes">
-                <button type="button" class="conteudoPrincipal-botao">Quero me cadastrar</button>
+                <router-link to="/login" class="conteudoPrincipal-botao">
+                    <Botao msg='Já tenho conta' />
+                </router-link>
+                <router-link to="/cadastro" class="conteudoPrincipal-botao">
+                    <Botao msg='Quero me cadastrar' />
+                </router-link>
             </div>
         </div>
     </div>
@@ -35,7 +40,9 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins&display=swap');
+
 .conteudoPrincipal .container {
     display: flex;
     flex-direction: column;
@@ -44,13 +51,13 @@ export default {
 .conteudoPrincipal-logo {
     display: flex;
     justify-content: space-around;
-    padding: 10%;
+    margin: 0% 10% 2%;
 }
 
 .conteudoPrincipal-titulo {
     color: white;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     display: flex;
     justify-content: space-around;
 }
@@ -58,42 +65,57 @@ export default {
 .conteudoPrincipal-texto {
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 5% 20% 5%;
+    padding: 1% 20% 1%;
 }
 
 .conteudoPrincipal-botoes {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 2% 0% 2%;
-    text-decoration: none;
 }
 
 .conteudoPrincipal-botao {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: normal;
-    white-space: nowrap;
-    line-height: 24px;
-    color: white;
-    background-color: #FC7071;
-    border: none;
-    border-radius: 8px;
-    padding: 2.5% 5% 2.5%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .rodapePrincipal-ilustracao {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .conteudoPrincipal-logo {
+        margin: 10%;
+    }
+
+    .conteudoPrincipal-titulo {
+        font-size: 26px;
+    }
+
+    .conteudoPrincipal-texto {
+        font-size: 16px;
+        padding: 5% 20% 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .conteudoPrincipal-logo {
+        margin: 10%;
+    }
+
+    .conteudoPrincipal-titulo {
+        font-size: 26px;
+    }
+
+    .conteudoPrincipal-texto {
+        font-size: 16px;
+        padding: 5% 20% 5%;
+    }
 }
 </style>

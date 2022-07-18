@@ -1,11 +1,13 @@
 <script lang="ts">
 import { defineComponent } from "vue"
+import Botao from "../components/Botao.vue"
 
 export default defineComponent({
     name: "Cadastro",
     created() {
-        document.body.style.backgroundColor = '#FFFFFF'
+        document.body.style.backgroundColor = "#FFFFFF";
     },
+    components: { Botao }
 })
 </script>
 
@@ -43,14 +45,14 @@ export default defineComponent({
             </form>
 
             <div class="conteudoPrincipal-botoes">
-                <button class="conteudoPrincipal-botao">Cadastrar</button>
+                <Botao msg="Cadastrar" />
             </div>
 
         </div>
     </div>
 </template>
 
-<style>
+<style scoped>
 .conteudoPrincipal .container {
     display: flex;
     flex-direction: column;
@@ -121,26 +123,7 @@ export default defineComponent({
 
 .conteudoPrincipal-botoes {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 5% 0% 5%;
-    text-decoration: none;
-}
-
-.conteudoPrincipal-botao {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 24px;
-    color: white;
-    background-color: #FC7071;
-    border: none;
-    border-radius: 8px;
-    padding: 2.5% 5% 2.5%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    margin-top: 2%;
 }
 </style>
