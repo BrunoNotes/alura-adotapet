@@ -12,14 +12,12 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.botao-spaco {
-    padding: 2% 0% 2%;
-    width: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins&display=swap');
+
 
 .botao {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     font-style: normal;
     white-space: nowrap;
@@ -30,9 +28,21 @@ export default defineComponent({
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    padding: 2.5% 2.5% 2.5%;
-    width: 45%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    padding: 1% 2.5% 1%;
+    width: 25%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .botao {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .botao {
+        width: 60%;
+        font-size: 16px;
+        padding: 2.5% 2.5% 2.5%;
+    }
 }
 </style>

@@ -83,20 +83,23 @@ export default defineComponent({
 
 .cabecalhoPrincipal-nav-link {
     margin: 0% 5% 0%;
+    cursor: pointer;
 }
 
 .cabecalhoPrincipal-usuario-link {
     display: flex;
     flex-grow: 1;
     justify-content: right;
+    cursor: pointer;
 }
 
 .logo {
     margin: 0% 10% 0%;
+    cursor: pointer;
 }
 
 .logoImg {
-    height: 8vh;
+    height: 6vh;
     width: auto;
 }
 

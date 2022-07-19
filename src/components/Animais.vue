@@ -42,6 +42,8 @@ export default defineComponent({
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins&display=swap');
+
 .conteudoPrincipal-animal {
     display: flex;
     background-color: #F6F6F6;

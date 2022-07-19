@@ -5,7 +5,23 @@ export default {
     created() {
         document.body.style.backgroundColor = "#3772FF";
     },
-    components: { Botao }
+    components: { Botao },
+    data() {
+        return {
+            textoPrincipal: ''
+        }
+    },
+    computed: {
+        mobile() {
+            let texto: String
+            if (screen.width <= 600) {
+                return texto = "Que tal mudar sua vida adotando seu novo melhor amigo? Vem com a gente!"
+            }
+            else {
+                return texto = "Adotar pode mudar uma vida. Que tal buscar seu novo melhor amigo hoje? Vem com a gente!"
+            }
+        }
+    },
 }
 </script>
 
@@ -17,10 +33,9 @@ export default {
             </div>
 
             <h2 class="conteudoPrincipal-titulo">Boas-Vindas!</h2>
-
-            <p class="conteudoPrincipal-texto">Que tal mudar sua vida adotando seu novo melhor amigo? Vem com a
-                gente!
-            </p>
+            <div class="conteudoPrincipal-texto-pos">
+                <p class="conteudoPrincipal-texto">{{ mobile }}</p>
+            </div>
 
             <div class="conteudoPrincipal-botoes">
                 <router-link to="/login" class="conteudoPrincipal-botao">
@@ -30,13 +45,13 @@ export default {
                     <Botao msg='Quero me cadastrar' />
                 </router-link>
             </div>
+            <div class="footer">
+                <div class="rodapePrincipal-ilustracao">
+                    <img src="../assets/img/Ilustração_(1).png" alt="Ilustacao">
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="footer">
-        <div class="rodapePrincipal-ilustracao">
-            <img src="../assets/img/Ilustração_(1).png" alt="Ilustacao">
-        </div>
     </div>
 </template>
 
@@ -46,12 +61,16 @@ export default {
 .conteudoPrincipal .container {
     display: flex;
     flex-direction: column;
+    background-image: url('../assets/img/Forma_2.svg');
+    background-repeat: no-repeat;
+    background-position: right 0% top 20%;
+    background-size: auto 80%;
 }
 
 .conteudoPrincipal-logo {
     display: flex;
     justify-content: space-around;
-    margin: 0% 10% 2%;
+    margin: 0% 10% 1%;
 }
 
 .conteudoPrincipal-titulo {
@@ -62,6 +81,11 @@ export default {
     justify-content: space-around;
 }
 
+.conteudoPrincipal-texto-pos {
+    display: flex;
+    justify-content: center;
+}
+
 .conteudoPrincipal-texto {
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -69,18 +93,15 @@ export default {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 1% 20% 1%;
-}
-
-.conteudoPrincipal-botoes {
-    display: flex;
-    flex-direction: column;
+    width: 25%;
+    margin: 1% 0% 1%;
 }
 
 .conteudoPrincipal-botao {
     display: flex;
     justify-content: center;
     text-decoration: none;
+    margin: 1%;
 }
 
 .rodapePrincipal-ilustracao {
@@ -90,8 +111,13 @@ export default {
 }
 
 @media only screen and (max-width: 1024px) {
+    .conteudoPrincipal .container {
+        background-position: right 0% top 40%;
+        background-size: auto 70%;
+    }
+
     .conteudoPrincipal-logo {
-        margin: 10%;
+        margin: 10% 0% 2%;
     }
 
     .conteudoPrincipal-titulo {
@@ -100,11 +126,25 @@ export default {
 
     .conteudoPrincipal-texto {
         font-size: 16px;
-        padding: 5% 20% 5%;
+        width: 50%;
+        margin: 1.5% 0% 1.5%;
+    }
+
+    .conteudoPrincipal-botao {
+        margin: 2%;
+    }
+
+    .rodapePrincipal-ilustracao {
+        transform: scale(1);
     }
 }
 
 @media only screen and (max-width: 600px) {
+    .conteudoPrincipal .container {
+        background-position: right 0% top 20%;
+        background-size: auto 50%;
+    }
+
     .conteudoPrincipal-logo {
         margin: 10%;
     }
@@ -116,6 +156,15 @@ export default {
     .conteudoPrincipal-texto {
         font-size: 16px;
         padding: 5% 20% 5%;
+        width: 100%;
+    }
+
+    .conteudoPrincipal-botao {
+        margin: 3%;
+    }
+
+    .rodapePrincipal-ilustracao {
+        transform: scale(1);
     }
 }
 </style>
