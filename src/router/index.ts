@@ -3,6 +3,8 @@ import Home from "../views/Home.vue"
 import Cadastro from "../views/Cadastro.vue"
 import Login from "../views/Login.vue"
 import TelaAnimais from "../views/TelaAnimais.vue"
+import Mensagem from "../views/Mensagem.vue"
+import Perfil from "../views/Perfil.vue"
 
 const rotas: RouteRecordRaw[] = [{
     path: '/',
@@ -20,10 +22,20 @@ const rotas: RouteRecordRaw[] = [{
     component: Login
 },
 {
+    path: '/mensagem',
+    name: 'Mensagem',
+    component: Mensagem
+},
+{
     path: '/telaanimais',
     name: 'TelaAnimais',
     component: TelaAnimais
-}
+},
+{
+    path: '/perfil',
+    name: 'Perfil',
+    component: Perfil
+},
 ]
 
 const roteador = createRouter({

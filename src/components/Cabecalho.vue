@@ -27,14 +27,23 @@ export default defineComponent({
             else {
                 return false;
             }
-        }
-
+        },
     },
+    computed: {
+        rotaPatas() {
+            let rotaAtiva = this.$route.name
+            if (rotaAtiva == "Cadastro" || rotaAtiva == "Login") {
+                return "patas"
+            } else {
+                return "none"
+            }
+        }
+    }
 })
 </script>
 
 <template>
-    <div class="cabecalhoPrincipal">
+    <div class="cabecalhoPrincipal" v-bind:id="rotaPatas">
         <div class="container">
             <nav class="cabecalhoPrincipal-nav">
                 <div class="menu">
@@ -46,7 +55,7 @@ export default defineComponent({
                         <img src="../assets/img/Casa.svg" alt="Home">
                     </div>
 
-                    <router-link to="/" class="cabecalhoPrincipal-nav-link">
+                    <router-link to="/mensagem" class="cabecalhoPrincipal-nav-link">
                         <img src="../assets/img/Mensagens.svg" alt="Mensagem">
                     </router-link>
                 </div>
@@ -62,6 +71,13 @@ export default defineComponent({
 </template>
 
 <style scoped>
+#patas {
+    background-image: url(../assets/img/Patas.png);
+    background-repeat: no-repeat;
+    background-position: right 0% top 20%;
+    background-size: 10%;
+}
+
 .cabecalhoPrincipal .container {
     display: flex;
 }
